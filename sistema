@@ -1,0 +1,189 @@
+# sistema_biblioteca_completo.py
+
+# Todas as listas (tabelas)
+usuarios = []
+tipo_usuario = []
+autores = []
+funcionarios = []
+editoras = []
+reservas = []
+obras = []
+tipos_material = []
+exemplares = []
+emprestimos = []
+multas = []
+renovacoes = []
+
+while True:
+    print("\n" + "="*50)
+    print("SISTEMA BIBLIOTECA - MENU PRINCIPAL")
+    print("="*50)
+    print("1.  Usuários")
+    print("2.  Tipo Usuário") 
+    print("3.  Autores")
+    print("4.  Funcionários")
+    print("5.  Editoras")
+    print("6.  Reservas")
+    print("7.  Obras")
+    print("8.  Tipos Material")
+    print("9.  Exemplares")
+    print("10. Empréstimos")
+    print("11. Multas")
+    print("12. Renovações")
+    print("13. VER TUDO")
+    print("0.  SAIR")
+    print("="*50)
+    
+    op = input("Opção: ")
+    
+    if op == "1":  # Usuários
+        dados = {
+            'id_usuarios': int(input("ID: ")),
+            'nome_usuario': input("Nome: "),
+            'email': input("Email: "),
+            'telefone': input("Telefone: "),
+            'endereco': input("Endereço: ")
+        }
+        usuarios.append(dados)
+        print("✅ Usuário adicionado!")
+    
+    elif op == "2":  # Tipo Usuário
+        dados = {
+            'id_usuario': int(input("ID: ")),
+            'name': input("Nome tipo: "),
+            'max_empresimos': int(input("Max empréstimos: ")),
+            'prazo_empresimo': int(input("Prazo (dias): ")),
+            'multa_diaria': float(input("Multa diária: "))
+        }
+        tipo_usuario.append(dados)
+        print("✅ Tipo usuário adicionado!")
+    
+    elif op == "3":  # Autores
+        dados = {
+            'id_autor': int(input("ID: ")),
+            'nome': input("Nome: "),
+            'nacionalidade': input("Nacionalidade: "),
+            'data_nascimento': input("Data nasc: "),
+            'data_falecimento': input("Data falec: "),
+            'biografia': input("Biografia: ")
+        }
+        autores.append(dados)
+        print("✅ Autor adicionado!")
+    
+    elif op == "4":  # Funcionários
+        dados = {
+            'id': int(input("ID: ")),
+            'nome': input("Nome: "),
+            'email': input("Email: "),
+            'telefone': input("Telefone: "),
+            'cargo': input("Cargo: ")
+        }
+        funcionarios.append(dados)
+        print("✅ Funcionário adicionado!")
+    
+    elif op == "5":  # Editoras
+        dados = {
+            'id_editora': int(input("ID: ")),
+            'nome': input("Nome: "),
+            'endereco': input("Endereço: "),
+            'telefone': input("Telefone: "),
+            'email': input("Email: ")
+        }
+        editoras.append(dados)
+        print("✅ Editora adicionada!")
+    
+    elif op == "6":  # Reservas
+        dados = {
+            'id': int(input("ID: ")),
+            'obra_id': int(input("ID Obra: ")),
+            'usuario_id': int(input("ID Usuário: ")),
+            'data_reserva': input("Data reserva: "),
+            'data_expiracao': input("Data expira: "),
+            'status': input("Status: ")
+        }
+        reservas.append(dados)
+        print("✅ Reserva adicionada!")
+    
+    elif op == "7":  # Obras
+        dados = {
+            'id_obra': int(input("ID: ")),
+            'titulo': input("Título: "),
+            'isbn': input("ISBN: "),
+            'ano_publicacao': int(input("Ano: ")),
+            'edicao': input("Edição: "),
+            'editora_id': int(input("ID Editora: "))
+        }
+        obras.append(dados)
+        print("✅ Obra adicionada!")
+    
+    elif op == "8":  # Tipos Material
+        dados = {
+            'id': int(input("ID: ")),
+            'nome': input("Nome: "),
+            'prazo_empresimo': int(input("Prazo: "))
+        }
+        tipos_material.append(dados)
+        print("✅ Tipo material adicionado!")
+    
+    elif op == "9":  # Exemplares
+        dados = {
+            'id': int(input("ID: ")),
+            'obra_id': int(input("ID Obra: ")),
+            'codigo_barras': input("Código barras: "),
+            'data_aquisicao': input("Data aquisição: "),
+            'localizacao': input("Localização: "),
+            'estado_conservacao': input("Estado: "),
+            'disponivel': input("Disponível (s/n): ")
+        }
+        exemplares.append(dados)
+        print("✅ Exemplar adicionado!")
+    
+    elif op == "10":  # Empréstimos
+        dados = {
+            'id': int(input("ID: ")),
+            'exemplar_id': int(input("ID Exemplar: ")),
+            'usuario_id': int(input("ID Usuário: ")),
+            'data_emprestimo': input("Data emp: "),
+            'data_devolucao_prevista': input("Data dev prev: "),
+            'data_devolucao_efetiva': input("Data dev efet: "),
+            'status': input("Status: "),
+            'multa': input("Multa: ")
+        }
+        emprestimos.append(dados)
+        print("✅ Empréstimo adicionado!")
+    
+    elif op == "11":  # Multas
+        dados = {
+            'id': int(input("ID: ")),
+            'usuario_id': int(input("ID Usuário: ")),
+            'emprestimo_id': int(input("ID Empréstimo: ")),
+            'valor': float(input("Valor: ")),
+            'data_multa': input("Data multa: "),
+            'data_pagamento': input("Data pagamento: "),
+            'status': input("Status: ")
+        }
+        multas.append(dados)
+        print("✅ Multa adicionada!")
+    
+    elif op == "12":  # Renovações
+        dados = {
+            'id': int(input("ID: ")),
+            'emprestimo_id': int(input("ID Empréstimo: ")),
+            'data_renovacao': input("Data renovação: "),
+            'nova_data_devolucao': input("Nova data dev: ")
+        }
+        renovacoes.append(dados)
+        print("✅ Renovação adicionada!")
+    
+    elif op == "13":  # VER TUDO
+        print(f"\n📊 RESUMO GERAL:")
+        print(f"Usuários: {len(usuarios)} | Obras: {len(obras)} | Autores: {len(autores)}")
+        print(f"Empréstimos: {len(emprestimos)} | Reservas: {len(reservas)} | Multas: {len(multas)}")
+        print(f"Exemplares: {len(exemplares)} | Funcionários: {len(funcionarios)}")
+    
+    elif op == "0":
+        print("Saindo... Até logo!")
+        break
+    
+    else:
+        print("❌ Opção inválida!")
