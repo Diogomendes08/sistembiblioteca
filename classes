@@ -1,0 +1,98 @@
+class Usuario:
+    def __init__(self, id_usuarios, nome_usuario, email, telefone, endereco):
+        self.id_usuarios = id_usuarios
+        self.nome_usuario = nome_usuario
+        self.email = email
+        self.telefone = telefone
+        self.endereco = endereco
+    
+    def __str__(self):
+        return f"Usuário: {self.nome_usuario} (ID: {self.id_usuarios})"
+
+class TipoUsuario:
+    def __init__(self, id_usuario, name, max_empresimos, prazo_empresimo, multa_diaria):
+        self.id_usuario = id_usuario
+        self.name = name
+        self.max_empresimos = max_empresimos
+        self.prazo_empresimo = prazo_empresimo
+        self.multa_diaria = multa_diaria
+
+class Autor:
+    def __init__(self, id_autor, nome, nacionalidade, data_nascimento, data_falecimento, biografia):
+        self.id_autor = id_autor
+        self.nome = nome
+        self.nacionalidade = nacionalidade
+        self.data_nascimento = data_nascimento
+        self.data_falecimento = data_falecimento
+        self.biografia = biografia
+    
+    def __str__(self):
+        return f"Autor: {self.nome}"
+
+class Funcionario:
+    def __init__(self, id_funcionario, nome, email, telefone, cargo):
+        self.id_funcionario = id_funcionario
+        self.nome = nome
+        self.email = email
+        self.telefone = telefone
+        self.cargo = cargo
+
+class Editora:
+    def __init__(self, id_editora, nome, endereco, telefone, email):
+        self.id_editora = id_editora
+        self.nome = nome
+        self.endereco = endereco
+        self.telefone = telefone
+        self.email = email
+
+class Obra:
+    def __init__(self, id_obra, titulo, isbn, ano_publicacao, edicao, editora_id):
+        self.id_obra = id_obra
+        self.titulo = titulo
+        self.isbn = isbn
+        self.ano_publicacao = ano_publicacao
+        self.edicao = edicao
+        self.editora_id = editora_id
+    
+    def __str__(self):
+        return f"Obra: {self.titulo} ({self.ano_publicacao})"
+
+class Exemplar:
+    def __init__(self, id_exemplar, obra_id, codigo_barras, data_aquisicao, localizacao, estado_conservacao, disponivel):
+        self.id_exemplar = id_exemplar
+        self.obra_id = obra_id
+        self.codigo_barras = codigo_barras
+        self.data_aquisicao = data_aquisicao
+        self.localizacao = localizacao
+        self.estado_conservacao = estado_conservacao
+        self.disponivel = disponivel
+
+class Emprestimo:
+    def __init__(self, id_emprestimo, exemplar_id, usuario_id, data_emprestimo, data_devolucao_prevista, data_devolucao_efetiva, status, multa):
+        self.id_emprestimo = id_emprestimo
+        self.exemplar_id = exemplar_id
+        self.usuario_id = usuario_id
+        self.data_emprestimo = data_emprestimo
+        self.data_devolucao_prevista = data_devolucao_prevista
+        self.data_devolucao_efetiva = data_devolucao_efetiva
+        self.status = status
+        self.multa = multa
+
+class Reserva:
+    def __init__(self, id_reserva, obra_id, usuario_id, data_reserva, data_expiracao, status):
+        self.id_reserva = id_reserva
+        self.obra_id = obra_id
+        self.usuario_id = usuario_id
+        self.data_reserva = data_reserva
+        self.data_expiracao = data_expiracao
+        self.status = status
+
+class Multa:
+    def __init__(self, id_multa, usuario_id, emprestimo_id, valor, data_multa, data_pagamento, status):
+        self.id_multa = id_multa
+        self.usuario_id = usuario_id
+        self.emprestimo_id = emprestimo_id
+        self.valor = valor
+        self.data_multa = data_multa
+        self.data_pagamento = data_pagamento
+        self.status = status
