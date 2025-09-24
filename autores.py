@@ -1,4 +1,3 @@
-# autores.py
 autores = []
 
 while True:
